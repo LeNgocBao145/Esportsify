@@ -30,7 +30,6 @@ app.use(express.json());
 //Template engine
 app.engine(
     'hbs',
-
     handlebars.engine({
         extname: '.hbs',
         // helpers: require('./app/helpers'),
@@ -38,13 +37,21 @@ app.engine(
 );
 
 // Set view engine and views directory
-app.set('view engine', 'hbs');
+app.set(
+    'view engine',
+
+    'hbs',
+);
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
 // Routes
 route(app);
 
 // Start server
-app.listen(port, () => {
-    console.log(`Esportsify app listening on port ${port}`);
-});
+app.listen(
+    port,
+
+    () => {
+        console.log(`Esportsify app listening on port ${port}`);
+    },
+);
